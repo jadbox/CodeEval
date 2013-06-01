@@ -1,4 +1,5 @@
-CodeEval
+CodeEval.com
 ========
+Account Username: jdunlap
 
-CodeEval.com challenges and solutions
+Solutions here are for CodeEval challenges using exotic languages
