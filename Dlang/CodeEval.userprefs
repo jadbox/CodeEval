@@ -1,15 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Easy\main.d">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Easy\HexToDec.d">
     <Files>
-      <File FileName="Easy\main.d" Line="27" Column="2" />
-      <File FileName="Easy\HexToDec.d" Line="12" Column="3" />
+      <File FileName="Easy\main.d" Line="25" Column="4" />
+      <File FileName="Easy\HexToDec.d" Line="53" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Easy" expanded="True">
-            <Node name="main.d" selected="True" />
+            <Node name="HexToDec.d" selected="True" />
           </Node>
         </State>
       </Pad>
