@@ -44,6 +44,7 @@
     <Compile Include="UniqueWord.d" />
     <Compile Include="UpperFile.d" />
     <Compile Include="LineSum.d" />
+    <Compile Include="HexToDec.d" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fizzBuzz1.txt">
@@ -58,8 +59,5 @@
     <None Include="lineNumbers.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="effecticestack\" />
   </ItemGroup>
 </Project>

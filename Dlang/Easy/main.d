@@ -12,6 +12,7 @@ import std.typetuple;
 import std.typecons;
 import UpperFile;
 import LineSum;
+import HexToDec;
 
 //import std.regex;
 
@@ -20,9 +21,10 @@ void main(string[] args)
 	// Prints "Hello World" strig in console
 	//UpperFile.readFile("text.txt");
 	//LineSum.sumFile("lineNumbers.txt");
-	auto result = LineSum.totalSumFile("lineNumber.txt");
 
-	writeln(result);
+	//LineSum.totalSumFile("lineNumber.txt").writeln();
+
+	auto test = new HexToDec.HexToDecimal();
 }
 
 
