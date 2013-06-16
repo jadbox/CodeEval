@@ -29,7 +29,7 @@ class BlackJack
 	}
 	enum AceVal:int { NIL=0, LOW = 1, HIGH = 11 }
 	enum CardType : int {
-		TWO=2, THREE, ACE=11 //FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, QUEEN, JACK, KING, 
+		TWO=2, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, QUEEN, JACK, KING, ACE
 	}
 	enum CardSuit {
 		Spades, Hearts, Diamonds, Clubs
