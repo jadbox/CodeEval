@@ -1,18 +1,12 @@
 module main;
 
 import std.stdio;
-import std.file;
-import std.path;
 import std.string;
-import std.conv;
-import std.algorithm;
-import std.range;
-import std.traits;
-import std.typetuple;
-import std.typecons;
-import UpperFile;
-import LineSum;
+
+//import UpperFile;
+//import LineSum;
 import HexToDec;
+import BlackJack;
 
 //import std.regex;
 
@@ -24,7 +18,9 @@ void main(string[] args)
 
 	//LineSum.totalSumFile("lineNumber.txt").writeln();
 
-	auto test = new HexToDec.HexToDecimal();
+	//auto test = new HexToDec.HexToDecimal();
+	//auto test = new HexToDec.HexToDecimal();
+	auto test = new BlackJack(); test.play();
 }
 
 

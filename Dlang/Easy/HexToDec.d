@@ -29,11 +29,14 @@ class HexToDecimal
 			else return c - 'a' + 10;
 		}
 		//===
-		int i = 0;
-		auto algo = (int a) => a*pow(16, i++);
+		int algo(int a) {
+			static int i = 0;
+			return a*pow(16, i++);
+		}
 		//===
 		auto hexInts = map!offset(hex.str).array().reverse; // "f9" => 15, 9 => 9, 15
-		auto ans = map!algo(hexInts).reduce!("a+b"); 
+		auto ansList = map!(algo)(hexInts);
+		auto ans = reduce!("a+b")(ansList); 
 		return ans;
 	}
 	

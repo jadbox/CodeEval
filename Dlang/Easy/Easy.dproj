@@ -45,6 +45,7 @@
     <Compile Include="UpperFile.d" />
     <Compile Include="LineSum.d" />
     <Compile Include="HexToDec.d" />
+    <Compile Include="BlackJack.d" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fizzBuzz1.txt">

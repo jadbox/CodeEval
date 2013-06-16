@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Easy\HexToDec.d">
     <Files>
-      <File FileName="Easy\main.d" Line="25" Column="4" />
-      <File FileName="Easy\HexToDec.d" Line="53" Column="2" />
+      <File FileName="Easy\main.d" Line="12" Column="18" />
+      <File FileName="Easy\HexToDec.d" Line="20" Column="3" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
