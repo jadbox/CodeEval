@@ -73,7 +73,7 @@ class BlackJack
 		resolveAces(&dlogic, dealer);
 		//======
 		writeln("==== Dealers Hand ====");
-		foreach(ref c; dealer.hand) writeln("Dealer has a "~to!string(c.name)~" of "~to!string(c.suit) ~ " value:" ~ to!string(c.val));
+		foreach(ref c; dealer.hand) writeln("Dealer has a ",c.name," of ",c.suit," value:",c.val);
 		writeln("=======================");
 		writeln("Player: ",user.score," :: Dealer: ", dealer.score);
 
@@ -108,7 +108,7 @@ class BlackJack
 	}
 	Card tellDraw(string who="You") {
 		auto c = draw();
-		writeln(who ~ " draw a: " ~ to!string(c.name) ~ " of " ~ to!string(c.suit));
+		writeln(who ~ " draw a: ",c.name," of ",c.suit);
 		return c;
 	}
 
