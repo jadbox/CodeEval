@@ -4,27 +4,38 @@ import std.stdio;
 import std.conv;
 import std.array;
 import std.math;
+import std.algorithm;
 
 class BlackJack
 {
+	struct Player {
+		int score=0;
+		Card[] hand;
+		ref Player add(Card c) {
+			hand ~= c;
+			score += c.val;
+			return this;
+		}
+	};
+	Player dealer, user;
 	struct Card {
 		CardSuit suit;
 		CardType name;
+		AceVal aceval=AceVal.NIL; // For ace
 		@property int val() {
-			return std.algorithm.min(to!int(name), 10);
+			if(name==CardType.ACE) return aceval;
+			return std.algorithm.min(name, 10);
 		}
 	}
+	enum AceVal:int { NIL=0, LOW = 1, HIGH = 11 }
 	enum CardType : int {
-		TWO=2, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, QUEEN, JACK, KING, ACE 
+		TWO=2, THREE, ACE=11 //FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, QUEEN, JACK, KING, 
 	}
 	enum CardSuit {
 		Spades, Hearts, Diamonds, Clubs
 	}
 
 	Card[] deck;
-	//Card[] ideck;
-	Card[] phand;
-	Card[] dhand;
 	this()
 	{
 		// make deck
@@ -32,52 +43,68 @@ class BlackJack
 		//auto ideck2 = std.random.RandomCover([1,2,3], std.random.rndGen); 
 	} 
 	public void play() {
-		phand ~= tellDraw();
-		phand ~= tellDraw();
-		
-		int ptotal = total(phand);
+		user.add(tellDraw()).add(tellDraw());
 		while(true) {
-			writeln("Total: " ~ to!string(ptotal));
+			writeln("Total: ", user.score);
 			writeln("Draw card (y/n)?");
 			auto c = std.stdio.readln()[0];
 			if(c!='y') break;
-			phand ~= tellDraw();
-			ptotal += phand.back.val; 
+			user.add(tellDraw());
 		}
 		// Dealer draws
-		int dtotal = 0;
 		do {
 			writeln("Dealer draws");
-			dhand ~= draw();
-			dtotal += dhand.back.val;
-		} while(dtotal < 12);
-		
-		writeln("Player: " ~ to!string(ptotal) ~ " :: Dealer: " ~ to!string(dtotal));
-		
-		if(ptotal > dtotal && ptotal < 22) {
+			dealer.add( draw() );
+		} while(dealer.score < 12);
+
+		// resolve aces
+		AceVal plogic(ref Card c) {
+			writeln("Set Ace to (h)igh or (l)ow?");
+			auto ap = std.stdio.readln()[0];
+			if(ap=='l') return AceVal.LOW;
+			else if(ap=='h') return AceVal.HIGH;
+			else return AceVal.NIL;
+		}
+		resolveAces(&plogic, user);
+		// ace check for computer
+		AceVal dlogic(ref Card c) {
+			return dealer.score <= 21-11?AceVal.HIGH:AceVal.LOW;
+		}
+		resolveAces(&dlogic, dealer);
+		//======
+		writeln("==== Dealers Hand ====");
+		foreach(ref c; dealer.hand) writeln("Dealer has a "~to!string(c.name)~" of "~to!string(c.suit) ~ " value:" ~ to!string(c.val));
+		writeln("=======================");
+		writeln("Player: ",user.score," :: Dealer: ", dealer.score);
+
+		if(user.score > dealer.score && user.score < 22) {
 			writeln("You win!");
 		} else {
 			writeln("You lose.");
 		}
 	}
+	// Calls the delegate for each ace
+	void resolveAces(AceVal delegate(ref Card) fun, ref Player player) {
+		auto aces = filter!(c => c.name==CardType.ACE)(player.hand);
+		foreach(ref c; aces) {
+			do {
+				c.aceval = fun(c);
+			} while (c.aceval == AceVal.NIL); 
+			player.score+=c.val;
+		}
+	}
+
 	public void reset() {
-		phand = [];
-		dhand = [];
+		user = Player();
+		dealer = Player();
 		auto types = [ EnumMembers!CardType ];
 		auto suits = [ EnumMembers!CardSuit ];
-		int step = suits.length;
 		//deck.reserve(types.length * suites.length);
 		for(uint i = 0; i < types.length; i++) 
-			for(uint j = 0; j < step; j++) 
+			for(uint j = 0; j < suits.length; j++) 
 				deck ~= Card(suits[j], types[i]);
 		//===
 		std.random.randomShuffle(deck);
-		//foreach(c; deck) writeln(to!string(c.suit));
-	}
-	static int total(Card[] list) {
-		int vals;
-		foreach(c; list) vals += c.val;
-		return vals;
 	}
 	Card tellDraw(string who="You") {
 		auto c = draw();
