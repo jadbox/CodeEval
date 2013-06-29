@@ -43,7 +43,8 @@ class HexToDecimal
 	
 	int hexToInt(Hex hex) {
 		int answer = 0;
-		int stepv = 0, i = hex.str.length-1;
+		int stepv = 0;
+		auto i = hex.str.length-1;
 		
 		foreach(c; hex.str) {
 			if(c >= '0' && c <= '9') stepv = c-'0';

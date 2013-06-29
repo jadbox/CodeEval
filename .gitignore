@@ -14,3 +14,9 @@
 *.lai
 *.la
 *.a
+
+*.tlog
+*.exe
+*.com
+Debug/
+ipch/

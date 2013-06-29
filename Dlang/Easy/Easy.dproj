@@ -40,12 +40,12 @@
     <DebugLevel>0</DebugLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="main.d" />
     <Compile Include="UniqueWord.d" />
     <Compile Include="UpperFile.d" />
     <Compile Include="LineSum.d" />
     <Compile Include="HexToDec.d" />
     <Compile Include="BlackJack.d" />
+    <Compile Include="SIMDTests.d" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fizzBuzz1.txt">
@@ -60,5 +60,6 @@
     <None Include="lineNumbers.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="main.d" />
   </ItemGroup>
 </Project>

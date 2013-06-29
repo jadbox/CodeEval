@@ -5,10 +5,10 @@ import std.string;
 
 //import UpperFile;
 //import LineSum;
-import HexToDec;
+//import HexToDec;
 import BlackJack;
-
 //import std.regex;
+//import jasm.JASM;
 
 void main(string[] args)
 {
@@ -20,7 +20,9 @@ void main(string[] args)
 
 	//auto test = new HexToDec.HexToDecimal();
 	//auto test = new HexToDec.HexToDecimal();
+
 	auto test = new BlackJack(); test.play();
+	//auto c = new JASM();
 }
 
 

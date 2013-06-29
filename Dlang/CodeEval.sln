@@ -18,6 +18,6 @@ Global
 		{707B06E6-8CA8-4DBE-AE45-5914C6AD2FCD}.Unittest|Any CPU.Build.0 = Unittest|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = DFizzBuzz\Easy.dproj
+		StartupItem = Easy\Easy.dproj
 	EndGlobalSection
 EndGlobal
