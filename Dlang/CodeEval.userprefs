@@ -1,15 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Easy\main.d">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Easy\SIMDTests.d">
     <Files>
-      <File FileName="Easy\main.d" Line="24" Column="2" />
+      <File FileName="Easy\SIMDTests.d" Line="28" Column="10" />
+      <File FileName="Easy\main.d" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Easy" expanded="True">
-            <Node name="main.d" selected="True" />
-          </Node>
+        <State expanded="True" selected="True">
+          <Node name="Easy" expanded="True" />
         </State>
       </Pad>
     </Pads>

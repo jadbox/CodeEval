@@ -7,8 +7,7 @@ import std.string;
 //import LineSum;
 //import HexToDec;
 import BlackJack;
-//import std.regex;
-//import jasm.JASM;
+import SIMDTests;
 
 void main(string[] args)
 {
@@ -21,8 +20,8 @@ void main(string[] args)
 	//auto test = new HexToDec.HexToDecimal();
 	//auto test = new HexToDec.HexToDecimal();
 
-	auto test = new BlackJack(); test.play();
-	//auto c = new JASM();
+	//auto test = new BlackJack(); test.play();
+	auto s = new SIMDTests();
 }
 
 

@@ -46,6 +46,7 @@
     <Compile Include="HexToDec.d" />
     <Compile Include="BlackJack.d" />
     <Compile Include="SIMDTests.d" />
+    <Compile Include="main.d" />
   </ItemGroup>
   <ItemGroup>
     <None Include="fizzBuzz1.txt">
@@ -60,6 +61,5 @@
     <None Include="lineNumbers.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="main.d" />
   </ItemGroup>
 </Project>
