@@ -13,6 +13,8 @@
 # Compiled Static libraries
 *.lai
 *.la
+*.sdf
+*.opensdf
 *.a
 
 *.tlog
